@@ -1,6 +1,7 @@
 from datetime import date
+from os import getenv
 
-bot_token = ""
+bot_token = getenv("RZD_TICKETS_BOT_TOKEN")
 tg_admin_id = 593084007
 
 trains_filter_data = [
