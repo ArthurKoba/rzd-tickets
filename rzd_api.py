@@ -3,6 +3,7 @@ from asyncio import get_running_loop
 from json import load, dump
 
 from rzd_models import Train, TrainFilter
+from configs import proxy
 
 
 class RZDApi:
@@ -17,7 +18,7 @@ class RZDApi:
 
     async def get_trains(self, train_filter: TrainFilter) -> list[Train] | None:
         try:
-            response = await self.__session.post(self.__url, data=train_filter.get_json_to_request())
+            response = await self.__session.post(self.__url, data=train_filter.get_json_to_request(), proxy=proxy)
             if response.status != 200:
                 return print(f"error. status code: {response.status}")
             data = await response.json()

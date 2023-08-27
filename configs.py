@@ -7,6 +7,8 @@ load_dotenv()
 bot_token = getenv("RZD_TICKETS_BOT_TOKEN")
 tg_admin_id = 593084007
 
+proxy = getenv("PROXY")
+
 trains_filter_data = [
     {
         "origin": "2064055",
