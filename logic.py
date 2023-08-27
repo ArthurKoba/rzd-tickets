@@ -60,7 +60,7 @@ class Logic:
     async def send_start_notification(self, trains: list[Train]):
         text = "На данный момент ситуация следующая:\n"
         for train in trains:
-            text += "{} [ | {} -> {} | {}] - мест: {}\n".format(
+            text += "[{} | {} -> {} | {}] - мест: {}\n".format(
                 train.number,
                 train.origin_station,
                 train.destination_station,
@@ -73,7 +73,7 @@ class Logic:
     async def send_updated_notification(self, trains: list[Train]):
         text = "Изменение состояния наличия билетов:\n"
         for train in trains:
-            text += "{} [ | {} -> {} | {}] - Мест: {}\n".format(
+            text += "[{}  | {} -> {} | {}] - Мест: {}\n".format(
                 train.number,
                 train.origin_station,
                 train.destination_station,
