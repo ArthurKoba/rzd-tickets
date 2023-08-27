@@ -86,7 +86,8 @@ class Logic:
     async def __loop(self):
         print("Start logic")
         results = await self.check()
-        await self.send_start_notification(results)
+        if results:
+            await self.send_start_notification(results)
         self.is_started = True
         while self.is_started:
             if time() - self.__last_update <= self.__time_between_check:
